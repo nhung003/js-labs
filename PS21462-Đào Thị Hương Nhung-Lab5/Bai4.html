@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            border: 1px solid black;
+            border-radius: 5px;
+            width: max-content;
+            padding: 10px;
+            font-size: 20px;
+            background-color: #FFD36E;
+            margin: 0 auto;
+        }
+        body{
+             background: linear-gradient(#B6FFCE, #F6FFA4 , #F6FFA4) no-repeat center center fixed;
+
+        }
+        button{
+            padding: 5px;
+            margin-left: 160px;
+            background-color: #733C3C;
+            color: aliceblue;
+        }
+        .chon{
+            float: left;
+            padding: 10px;
+        }
+        h2{
+            text-align: center;
+        }
+        .abc {
+         width: 300px;
+         height: max-content;
+         border: 2px solid black;
+         border-radius: 5px;
+         text-align: center;
+         margin-left: 30px;
+        }
+
+        .xyz {
+         width: 300px;
+         height: 80px;
+         border: 2px solid black;
+         border-radius: 5px;
+         padding-left: 5px;
+         margin-left: 30px;
+
+         }
+
+    </style>
+
+</head>
+<body>
+    <div class="container">
+        <h2>Bạn nhớ Mẹ khi nào</h2>
+        <div id="ketqua"></div>
+        <form action="">
+            <div class="chon">
+                <input type="checkbox" name="me" value="Đói">Đói <br>
+            </div>
+            <div class="chon">
+                <input type="checkbox" name="me" value="No">No <br>
+            </div>
+            <div class="chon">
+                <input type="checkbox" name="me" value="Bệnh">Bệnh <br>
+            </div>
+            <div class="chon">
+                <input type="checkbox" name="me" value="Vui">Vui<br>
+            </div>
+            <div class="chon">
+                <input type="checkbox" name="me" value="Buồn"><span>Buồn</span><br>
+            </div> <br>
+            <button id="btn1" type="button" onclick="check()">Chọn</button>
+        </form>
+    </div>
+    <script>
+        function check(){
+          arr = document.getElementsByName("me");
+          var kq = document.getElementById("ketqua");
+          var dem = 0;
+          kq.innerHTML = "";
+          for (i = 0; i < arr.length; i++) {
+            if (arr[i].checked) {
+              var v = arr[i].value;
+              var chu = document.createTextNode(v);
+              var tagp = document.createElement("p");
+              tagp.appendChild(chu);
+              kq.appendChild(tagp);
+              dem++;
+            }
+          }
+     
+          if(dem > 0){
+            kq.className = "abc";
+          }else{
+            kq.innerHTML = "Bạn Chưa Chọn Mục Nào";
+            kq.className = "xyz";
+          }
+        }
+      </script>
+</body>
+</html>

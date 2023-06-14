@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PS21130_LeThiThuHuyen</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"> </script>
+    <style>
+        #form1 {
+            width: 500px;
+            margin: auto;
+            padding: 10px 40px;
+            background: whitesmoke;
+            border: 1px solid black;
+        }
+
+        #form1 .txt {
+            width: 400px;
+            padding: 6px;
+            border: solid 1px lightslategray;
+        }
+
+        #form1 fieldset {
+            border: 1px solid lightslategray;
+            margin-top: 0;
+        }
+
+        #form1 #dangki {
+            width: 100px;
+            height: 40px;
+            border: none;
+            background-color: royalblue;
+            color: white;
+        }
+
+        #form1 #baoloi {
+            margin: 0px auto;
+            color: red;
+
+        }
+
+        #form1 .loi {
+            width: 400px;
+            padding: 6px;
+            border: 1px solid red;
+            background-color: yellow;
+        }
+    </style>
+</head>
+
+<body>
+    <form name="form1" id="form" ng-app="b5" ng-controller="ctr1">
+        <h2>ĐĂNG KÍ THÀNH VIÊN</h2>
+        <p>
+            <label name="sv" >Mã sinh viên</label><br>
+            <input id="masv" type="text" class="txt" ng-model="sv" required minlength="7" maxlength="10">
+            <em ng-if="form1.sv.$in">Nhập mã sinh viên 7 đến 10 ký tự</em>
+        </p>
+        <p>
+            <label>Họ và tên</label><br>
+            <input name="ht" type="text" id="hoten" class="txt" ng-model="ht" required minlength="10" maxlength="30">
+            <em ng-if="form1.ht.$invalid">Nhập họ tên sinh viên</em>
+        </p>
+        <p>
+            <label>Email</label><br>
+            <input name="email" type="email" class="txt" ng-model="email" required minlength="10" maxlength="30">
+            <em ng-if="form1.email.$invalid">Nhập Email đúng cú pháp</em>
+        </p>
+        <p>
+        <fieldset id="fs1">
+            <legend>Giới tính</legend>
+            <input name="gioitinh" type="radio" name="phai" value="Nam" ng-model="gioitinh"><label>Nam</label>
+            <input name="gioitinh" type="radio" name="phai" value="Nữ" ng-model="gioitinh"><label>Nữ</label>
+        </fieldset>
+        <em ng-if="!gioitinh">Bạn thuộc phái nào</em>
+        </p>
+        <p>
+        <fieldset id="fs1">
+            <legend>Sở thích</legend>
+
+            <input ng-model="docsach" type="checkbox" name="st"><label>Đọc sách</label>
+            <input ng-model="dulich" type="checkbox" name="st"><label>Du lịch</label>
+<input ng-model="amthuc" type="checkbox" name="st"><label>Ẩm thực</label>
+            <input ng-model="amnhac" type="checkbox" name="st"><label>Âm nhạc</label>
+            <input ng-model="khac" type="checkbox" name="st"><label>Khác</label>
+        </fieldset>
+        <em ng-if="!docsach && !dulich && !amthuc && !amnhac && !khac ">Sở thích của bạn là gì</em>
+        </p>
+        <p>
+            <label>Quốc tịch</label><br>
+            <em ng-if="!quoctich">Hãy chọn quốc tịch</em>
+            <option value="0">Chọn quốc tịch</option>
+            <option value="1">Việt Nam</option>
+            <option value="2">Nhật Bản</option>
+            <option value="3">Hàn Quốc</option>
+            </select>
+        </p>
+        <p>
+            <label>Ghi chú</label><br>
+            <textarea id="ghichu" cols="54" rows="5" class="txt"></textarea>
+        </p>
+        <div id="baoloi"></div>
+        <button type="button" onclick="kiemtra();" id="dangki">Đăng kí</button>
+    </form>
+
+</body>
+
+</html>
+<script>
+    app = angular.module("b5", []);
+    app.controller("ctr1", xuly);
+    function xuly($scope) {
+
+    }
+</script>

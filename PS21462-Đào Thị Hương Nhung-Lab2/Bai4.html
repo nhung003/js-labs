@@ -1,0 +1,47 @@
+<html>
+    <head>
+        <style>
+            .container{
+                border: 1px solid black;
+                border-radius: 5px;
+                width: max-content;
+                margin: 0px auto;
+            }
+            .title{
+                border-bottom: 1px solid black;
+                text-align: center;
+                background-color: red;
+                font-weight: bolder;
+                font-size: large;
+                color: aliceblue;
+                padding: 5px 0px;
+                font-size: 20px;
+            }
+            .doanVan{
+                padding: 10px 10px;
+                color: blue;
+                font-size: 15px;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="title">
+                <h4>Lưu biến vào session store</h4>
+            </div>
+            <div class="doanVan">
+            <p>Bạn đã xem trang này <span id="solan"></span></p>
+                <p>Gõ phím F5 nạp lại trang để xem kết quả</p>
+            </div>
+        </div>
+    </body>
+</html>
+<script>
+            var slx = sessionStorage.getItem("soLanXem");
+            // nơi lưu trữ các biến để có thể dùng lại các lần sau
+            if (slx == null) slx = 0;
+            else slx++;
+            sessionStorage.setItem("soLanXem", slx);
+            document.getElementById("solan").innerHTML=slx;
+</script>

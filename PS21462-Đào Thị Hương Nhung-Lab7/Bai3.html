@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PS21462-Đào Thị Hương Nhung</title>
+    <script src="angular.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+          body{
+             background: linear-gradient(#FD5D5D, #C3E5AE , #F1E1A6) no-repeat center center fixed;
+          }
+    </style>
+</head>
+<body ng-app="b3">
+    <div class="container" ng-controller="ctr1">
+    <form action="" name="frm" class="col-5 mx-auto border border-primary">
+        <div class="form-group">
+            <label for="">Ten SP</label>
+            <input type="text" name="tensp" class="form-control bg-primary" ng-model="tensp" required minlength="2" maxlength="30">
+            <em ng-if="frm.tensp.$invalid" class="text-danger h6">Nhap ten san pham tu 2 den 30 ky tu</em>
+        </div>
+        <div class="form-group">
+            <label for="">So luong</label>
+            <input type="text" name="soluong" class="form-control bg-warning" ng-model="soluong" type="number" min="1">
+            <em ng-if="frm.soluong.$invalid || soluong>100" class="text-danger h6">Nhap so luong tu 1 den 100</em>
+        </div>
+        <div class="form-group">
+            <label for="">Nha san xuat</label>
+            <select name="nsx" class="form-control bg-secondary text-white" ng-model="nsx">
+                <option value="0">Chon NSX</option>
+                <option value="1">Samsung</option>
+                <option value="2">Toshiba</option>
+                <option value="3">HTC</option>
+            </select>
+            <em ng-if="!nsx || nsx==0" class="text-danger h6">Hay chon 1 nha san xuat</em>
+        </div>
+        <div class="form-group">
+            <label for="">Tinh trang</label>
+            <fieldset class="border border-secondary p-3">
+                <input name="tinhtrang" type="radio" value="1" ng-model="tinhtrang"> Hang cu &nbsp;
+                <input name="tinhtrang" type="radio" value="2" ng-model="tinhtrang"> Hang moi
+                <em ng-if="!tinhtrang" class="text-danger h6"> <br> Hang cu hay moi?</em>
+            </fieldset>
+            <div class="form-group">
+                <label for="">Mau sac</label>
+                <fieldset class="border border-secondary p-3">
+                    <input value="do" type="checkbox" ng-model="maudo"> Do &nbsp;
+                    <input value="den" type="checkbox" ng-model="mauden"> Den &nbsp;
+                    <input value="trang" type="checkbox" ng-model="mautrang"> Trang
+                    <em ng-if="!maudo && !mauden && !mautrang" class="text-danger h6"> <br> Mau gi vay?</em>
+                </fieldset>
+            </div>
+            <div class="form-group">
+                <button class="btn btn-info">Nhap san pham</button>
+            </div>
+        </div>
+    </form>
+    </div>
+</body>
+<script>
+    app= angular.module("b2",[]);
+    app.controller("hienthi",xuly);
+    function xuly($scope){
+        
+        
+    }
+</script>
+</html>

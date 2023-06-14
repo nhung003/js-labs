@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .container {
+        border: 1px solid black;
+        border-radius: 5px;
+        width: max-content;
+        padding: 10px;
+        margin: 0 auto;
+      }
+      .content {
+        text-align: center;
+      }
+      button {
+        font-size: large;
+        width: 200px;
+        background-color: rgb(255, 217, 0);
+        height: 40px;
+      }
+    </style>
+    <script>
+      var w; //cua so se dieu khien
+      // biến toàn cục
+      function moWin() {
+        w = window.open(
+          "thongtin.html",
+          "tt",
+          "width=400,height=200,top=50,left=600"
+        );
+        //tt là tên của cửa sổ
+        w.focus();
+      }
+      function dichuyen1chut() {
+        w.moveBy(5, 10);
+        w.focus();
+      }
+      function dichuyentoidiem() {
+        var x = prompt("Nhap toa do diem X: ");
+        // từ trái qua
+        var y = prompt("Nhap toa do diem Y: ");
+        // từ trên xuống
+        w.moveTo(x, y);
+        w.focus;
+      }
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Thưc hành với đối tượng Window</h1>
+      <div class="content">
+        <button onclick="moWin()">Mở win</button> <br />
+        <br />
+        <button onclick="window.print()">In Ấn</button> <br />
+        <br />
+        <button onclick="dichuyen1chut()">Di chuyển 1 chút</button> <br />
+        <br />
+        <button onclick="dichuyentoidiem()">Di chuyển tới điểm</button> <br />
+        <br />
+        <button onclick="w.close()">Đóng win</button>
+      </div>
+    </div>
+  </body>
+</html>

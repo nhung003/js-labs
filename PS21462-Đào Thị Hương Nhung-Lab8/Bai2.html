@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+.container{
+    text-align: center;
+    border: 1px solid black;
+    width: max-content;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 0 auto;
+    background-color: #F3E9DD;
+}
+#dongho{
+    font-size: 30px;
+    color: brown;
+}
+legend{
+    text-align: left; 
+    font-size: 20px;
+}
+.baihoc{
+    width: max-content;
+    margin: 0 auto;
+}
+button{
+    color: aliceblue;
+    background-color: brown;
+    border-radius: 5px;
+}
+body{
+    background: linear-gradient(#FD5D5D, #C3E5AE , #F1E1A6) no-repeat center center fixed;
+}
+</style>
+<body>
+    <div class="container">
+        <header>
+        <span id='dongho'>Dong ho</span>
+        </header>
+        <div class="nut">
+            <button type="button" onclick="start()" >Start</button>
+            <button type="button" onclick="stop()">Stop</button>
+            <br> <br>
+        </div>
+        <div class="baihoc">
+            <fieldset >
+                <legend>Bai hoc</legend>
+                <select name="" id="link">
+                    <option value="0">Chon bai hoc</option>
+                    <option value="1">Javascript là gì?</option>
+                    <option value="2">Biến, toán tử và biểu thức</option>
+                    <option value="3">Cấu trúc điều khiển, hàm và sự kiện</option>
+                    <option value="4">Lâp trình đối tượng và mô hinhg BOM</option>
+                    <option value="5">Mô hình DOM trong Javascript</option>
+                    <option value="6">Validate Form</option>
+                    <option value="7">Giới thiệu Javascript Framework</option>
+                    <option value="8">Tập tành sử dụng angularJS</option>
+                </select>
+            <button type="button" onclick="xembaihoc()">Xem bai hoc</button>
+            </fieldset>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    var dh=null;
+    function tg(){
+        var now = new Date();
+        var h = now.getHours();
+        var m = now.getMinutes();
+        var s = now.getSeconds();
+        document.getElementById("dongho").innerHTML= h + ":" + m + ":" + s;
+    }
+    function start(){
+    dh = setInterval("tg()",1000);
+    }
+    function stop(){
+        clearInterval(dh);
+        dh=null;
+    }
+    function xembaihoc(){
+        var link = document.getElementById("link");
+        if(link.value == 1){
+            window.location.href = 'https://longnv.name.vn/lap-trinh-javascript/javascript-la-gi';
+        }else if(link.value == 2){
+            window.location.href = 'https://longnv.name.vn/lap-trinh-javascript/bien-kieu-toan-tu-va-bieu-thuc-trong-javascript';
+        }else if(link.value == 3){
+            window.location.href = 'https://longnv.name.vn/lap-trinh-javascript/cau-truc-dieu-khien-trong-javacript';
+        }else if(link.value == 4){
+            window.location.href = 'https://longnv.name.vn/lap-trinh-javascript/lap-trinh-doi-tuong-trong-javascript-va-mo-hinh-bom';
+        }else if(link.value == 5){
+            window.location.href = 'https://longnv.name.vn/lap-trinh-javascript/mo-hinh-dom-trong-javascript';
+        }else if(link.value == 6){
+            window.location.href = 'https://longnv.name.vn/lap-trinh-javascript/kiem-tra-du-lieu-trong-form-voi-javascript'
+        }else if(link.value == 7){
+            window.location.href = 'https://longnv.name.vn/lap-trinh-javascript/gioi-thieu-ve-javascript-framework';
+        }else if(link.value == 8){
+            window.location.href = 'https://longnv.name.vn/lap-trinh-javascript/su-dung-angularjs';
+        }
+    }
+</script>

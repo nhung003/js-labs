@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Đào Thị Hương Nhung</title>
+    <style>
+      .container {
+        border: 1px solid black;
+        text-align: center;
+        margin: 0px auto;
+        width: 500px;
+        height: max-content;
+      }
+      .title {
+        background-color: green;
+        padding: 1px;
+        color: aliceblue;
+      }
+      .content {
+        background-color: gray;
+      }
+      #pt {
+        color: orangered;
+        font-size: larger;
+      }
+      #kp {
+        color: greenyellow;
+        font-size: large;
+      }
+      .nut {
+        padding: 10px;
+      }
+    </style>
+    <script>
+      var ptb2 = new Object();
+      ptb2.a = null;
+      ptb2.b = null;
+      ptb2.c = null;
+      ptb2.nhap = function () {
+        do {
+          this.a = window.prompt("Nhap so a: ");
+        } while (isNaN(this.a) == true);
+        do {
+          this.b = window.prompt("Nhap so b: ");
+        } while (isNaN(this.b) == true);
+        do {
+          this.c = window.prompt("Nhap so c: ");
+        } while (isNaN(this.c) == true);
+        str = this.a + "x<sup>2</sup> + " + this.b + "x + " + this.c + " =0";
+        document.getElementById("pt").innerHTML = str;
+      };
+      ptb2.giai = function () {
+        var delta = this.b * this.b - 4 * this.a * this.c;
+        if (delta < 0) {
+          document.getElementById("kp").innerHTML =
+            "<p>Phuong trinh vo nghiem</p>";
+        } else if (delta == 0) {
+          var x = -this.b / (2 * this.a);
+          x = x.toFixed(2);
+          str = `<p> phuong trinh co nghiem kep: ${x.toFixed(2)}</p>`;
+          document.getElementById("kp").innerHTML = str;
+        } else {
+          //2 nghiem
+          var x1 = (-this.b - Math.sqrt(delta)) / (2 * this.a);
+          var x2 = (-this.b + Math.sqrt(delta)) / (2 * this.a);
+          var str = `<p>Phuong trinh co hai nghiem phan biet </p> <p>X<sub>1</sub> = ${x1.toFixed(
+            2
+          )} </p><p>X<sub>2</sub> = ${x2.toFixed(2)}</p>`;
+          document.getElementById("kp").innerHTML = str;
+        }
+      };
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="title">
+        <h2>Giai phuong trinh bac 2</h2>
+      </div>
+      <div class="content">
+        <div id="pt">Phuong trinh</div>
+        <div id="kp">Ket qua</div>
+        <div class="nut">
+          <button onclick="ptb2.nhap()">Nhap A B C</button>
+          <button onclick="ptb2.giai()">Giai PT</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

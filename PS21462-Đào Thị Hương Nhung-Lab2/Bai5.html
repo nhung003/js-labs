@@ -1,0 +1,39 @@
+<html>
+  <head>
+    <style>
+      .container {
+        border: 1px solid black;
+        border-radius: 10px;
+        font-size: large;
+        width: max-content;
+        padding: 10px;
+        color: aliceblue;
+        background-color: red;
+        margin: 0 auto;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      const pi = 3.14;
+      var r = prompt("Nhap vao ban kinh r: ");
+      if (isNaN(r) == true) {
+        alert(r + " khong phai la mot so");
+        r = prompt("Moi ban nhap lai ban kinh");
+      }
+      var chuVi = 2 * pi * r;
+      var dienTich = r * pi * r;
+    </script>
+
+    <div class="container">
+      <script>
+        document.write(
+          "Chu vi hinh tron co ban kinh " + r + " = " + chuVi + "<br>"
+        );
+        document.write(
+          "Dien tich hinh tron co ban kinh " + r + " = " + dienTich
+        );
+      </script>
+    </div>
+  </body>
+</html>

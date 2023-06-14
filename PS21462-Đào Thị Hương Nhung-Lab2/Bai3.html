@@ -1,0 +1,71 @@
+<html>
+ <head>
+    <script>
+        var a = prompt("Nhap so a: ");
+        var b = prompt("Nhap so b: ");
+        var c = prompt("Nhap so c: ");
+        if(isNaN(a) == true){
+            a = 0;
+        }
+        if(isNaN(b) == true){
+            b = 0;
+        }
+        if(isNaN(c) == true){
+            c = 0;
+        }
+    </script>
+    <script>
+        var delta = Math.pow(b, 2) - 4*a*c;
+    </script>
+    <style>
+        .container{
+            border: 1px solid black;
+            border-radius: 10px;
+            margin: 0 auto;
+            width: max-content;
+        }
+        .title{
+            padding: 20px 20px;
+            background-color: green;
+            color: aliceblue;
+        }
+        .content{
+            padding: 20px 40px;
+        }
+
+    </style>
+ </head>   
+ <body>
+    
+    <div class="container">
+        <div class="title">
+            <h3>GIAI PHUONG TRINH BAC 2</h3>
+        </div>
+        
+        <div class="content">
+            <script>
+                document.write(a);
+                document.write("x<sup>2</sup> +");
+                document.write(b);
+                document.write("x + ");
+                document.write(c);
+                document.write(" = 0");
+                </script>
+            <script>
+                if(delta < 0){
+                    document.write("<p>Phuong trinh vo nghiem</p>");
+                }else if(delta == 0){
+                    var x0 = -b/(2*a);
+                    document.write("<p>Phuong trinh co nghiem kep x0=" + x0 + "</p>");
+                }else{
+                    var x1 = (-b + Math.sqrt(delta))/(2*a);
+                    var x2 = (-b - Math.sqrt(delta))/(2*a);
+                    document.write("<p>Phuong trinh co 2 nghiep</p>");
+                    document.write("<p>x1= " + x1 + "</p>");
+                    document.write("<p>x2= " + x2 + "</p>");
+                }
+            </script>
+        </div>
+    </div>
+ </body>
+</html>

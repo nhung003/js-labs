@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="checksearch.js"></script>
+    <style>
+        .container{
+            text-align: center;
+            margin-top: 200px;
+        }
+        #tukhoa{
+            width: 400px;
+            height: 30px;
+            border-radius: 8px;
+        }
+        #btntim{
+            width: 50px;
+            height: 35px;
+            border-radius: 8px;
+        }
+        image{
+            text-align: center;
+        }
+    
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="logo.png" alt="">
+        <form name="formtim" action="kqtim.php" method="get" onsubmit=" ckecksearch();">
+            <input onclick="if(this.value == 'Tim kiem') this.value=''" onblur="if(this.value == '') this.value = 'Tim kiem'" type="text" name="tukhoa" id="tukhoa" value="Tim kiem">
+            <input type="submit" name="btntim" id="btntim" value="Tim">
+        </form>
+    </div>
+</body>
+</html>  

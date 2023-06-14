@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .title{
+            text-align: center;
+            color: red;
+        }
+        .container{
+            margin: 0 auto;
+        }
+        button{
+            width: 60px;
+            height: 60px;
+        }
+        #so1, #so2, #pheptinh, #kp{
+            height: 60px;
+            width: 60px;
+            background-color: blue;
+            color: aliceblue;
+            font-size: 25px;
+            text-align: center;
+        }
+    </style>
+    <title>Document</title>
+    <script>
+        var so1 = null;
+        var so2 = null;
+        var pheptinh = null;
+        var kp = null;
+    </script>
+</head>
+<body>
+    <div class="title">
+        <h2>MAY TINH JAVASCRIPT</h2>
+        <p>Tác giả: Đào Thị Hương Nhung</p>
+    </div>
+    <table class="container">
+        <tr>
+            <td><button onclick="ganso(7)">7</button></td>
+            <td><button onclick="ganso(8)">8</button></td>
+            <td><button onclick="ganso(9)">9</button></td>
+            <td><button onclick="pheptinh('+')">+</button></td>
+        </tr>
+        <tr>
+            <td><button onclick="ganso(4)">4</button></td>
+            <td><button onclick="ganso(5)">5</button></td>
+            <td><button onclick="ganso(6)">6</button></td>
+            <td><button onclick="pheptinh('-')">-</button></td>
+        </tr>
+        <tr>
+            <td><button onclick="ganso(1)">1</button></td>
+            <td><button onclick="ganso(2)">2</button></td>
+            <td><button onclick="ganso(3)">3</button></td>
+            <td><button onclick="pheptinh('*')">*</button></td>
+        </tr>
+        <tr>
+            <td><button onclick="ganso(0)">0</button></td>
+            <td><button onclick="lamlai()">C</button></td>
+            <td><button onclick="thuc_hien()">=</button></td>
+            <td><button onclick="pheptinh('/')">/</button></td>
+        </tr>
+        <tr>
+            <td id="so1"></td>
+            <td id="pheptinh"></td>
+            <td id="so2"></td>
+            <td id="kp"></td>
+        </tr>
+    </table>
+</body>
+</html>
+<script>
+    function ganso(x){
+        if(so1 == null){
+            so1 = x;
+            document.getElementById('so1').innerHTML=so1;
+             
+        }
+        else{  
+            so2 = x;
+            document.getElementById('so2').innerHTML=so2;
+
+        } 
+    }
+    function pheptinh(x){
+        pheptinh = x;
+        document.getElementById('pheptinh').innerHTML=pheptinh;
+
+    }
+    function lamlai(){
+        so1 = null;
+        so2 = null;
+        pheptinh = null;
+        kp = null;
+    }
+    function thuc_hien(){
+        if(pheptinh == '+') kp = so1 + so2;
+        else if(pheptinh == '-') kp = so1 - so2;
+        else if(pheptinh == '*') kp = so1 * so2;
+        else if(pheptinh == '/') kp = so1 / so2;
+        
+        document.getElementById('so1').innerHTML=so1;
+        document.getElementById('pheptinh').innerHTML=pheptinh;
+        document.getElementById('so2').innerHTML=so2;
+        document.getElementById('kp').innerHTML=kp;
+
+    }
+</script>

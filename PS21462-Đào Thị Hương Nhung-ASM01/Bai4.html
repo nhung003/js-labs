@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        #form1{
+            width: 400px;
+            margin: auto;
+            padding: 10px 40px;
+            background: whitesmoke;
+            border: 1px solid black;
+        }
+        #form1 .txt{
+            width: 400px;
+            padding: 6px;
+            border: 1px solid lightslategray;
+            margin-top: 0;
+        }
+        #form fieldset{
+            border: 1px solid lightslategray;
+            margin-top: 0;
+        }
+        #form1 #dangki{
+            width: 100px;
+            height: 40px;
+            border: none;
+            background-color: royalblue;
+            color: white;
+        }
+        #form1 #baoloi{
+            margin: 0px auto;
+            color: red;
+        }
+        #form1 .loi{
+            width: 400px;
+            padding: 6px;
+            border: 1px solid red;
+            background-color: yellow;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <form action="" id="form1" >
+        <h2>DANG KY THANH VIEN</h2>
+        <p>
+            <label for="">Ma sinh vien</label> <br>
+            <input id="masv" type="text" class="txt">
+        </p>
+        <p>
+            <label for="">Ho va ten</label> <br>
+            <input id="hoten" type="text" class="txt">
+        </p>
+        <p>
+            <label for="">Email</label> <br>
+            <input id="email" type="email" class="txt">
+        </p>
+        <p>
+            <fieldset id="fs1">
+                <legend>Gioi tinh</legend>
+                <input type="radio" name="phai" value="Nam"><label for="">Nam</label>
+                <input type="radio" name="phai" value="Nu"><label for="">Nu</label> <br>
+            </fieldset>
+        </p>
+        <p>
+            <fieldset id="fs2">
+                <legend>So thich</legend>
+                <input type="checkbox" name="st"><label for="">Doc sach</label>
+                <input type="checkbox" name="st"><label for="">Du lich</label>
+                <input type="checkbox" name="st"><label for="">Am thuc</label>
+                <input type="checkbox" name="st"><label for="">Am nhac</label>
+                <input type="checkbox" name="st"><label for="">Khac</label>
+            </fieldset>
+        </p>
+        <p>
+            <label for="">Quoc tich</label>
+            <select name="quoctich" id="quoctich" class="txt">
+                <option value="0">Chon quoc tich</option>
+                <option value="1">Viet Nam</option>
+                <option value="2">My</option>
+                <option value="3">Campuchia</option>
+            </select>
+        </p>
+        <p>
+            <label for="">Ghi chu</label> <br>
+            <textarea name="" id="ghichu" cols="54" rows="5" class="txt"></textarea>
+        </p>
+        <div id="baoloi"></div>
+        <button type="button" onclick=" kiemtra();" id="dangki">Dang ki</button>
+        <script>
+        </script>
+        
+    </form>
+</body>
+</html>
+<script>
+    function kiemtra() {
+        var loi = " ";
+        // kiem tra msv
+        var masv = document.getElementById("masv");
+        if(masv.value==" "){
+            masv.className="loi";
+            loi += "Ma sinh vien khong duoc bo trong <br>";
+
+        }else if(masv.value.length!=7){
+            masv.className="loi";
+            loi += "Ma sinh vien khong dung 7 ky tu <br>";
+        }
+        else {
+            masv.className="txt";
+        }
+
+        // kiem tra ho va ten
+        var hoten = document.getElementById("hoten");
+        if(hoten.value==""){
+            hoten.className="loi";
+            loi += "Ho va ten khong duoc bo trong <br>";
+        }else if(hoten.value.length>30){
+            hoten.className="loi";
+            loi += "Ho ten qua dai <br>";
+        }else hoten.className="txt";
+        // kiem tra email
+        var email = document.getElementById("email");
+        if(email.value==""){
+            email.className="loi";
+            loi+= "Email khong duoc bo trong <br>";
+        }
+        else email.className="txt";
+        // kt phai
+        dem=0;
+        var arr_phai = document.getElementsByName("phai");
+        for(var i = 0; i<arr_phai.length;i++){
+            if(arr_phai[i].checked==true) {
+                dem++;
+            }
+        }
+        if(dem==0){
+            document.getElementById("fs1").className="loi";
+            loi += "Phai chon gioi tinh <br>";
+        }
+        else document.getElementById("fs1").className="";
+        // kt so thich
+        arr_sothich= document.getElementsByName("st");
+        dem = 0;
+        for(var i=0; i<arr_sothich.length; i++){
+            if(arr_sothich[i].checked) dem++;
+        }
+        if(dem==0){
+            document.getElementById("fs2").className="loi";
+            loi += "Phai chon it nhat 1 so thich <br>";
+        }
+        else document.getElementById("fs2").className="";
+        // kiem tra quoc tich
+
+        var qt = document.getElementById("quoctich");
+        if(qt.value ==0){
+            qt.className = "loi";
+            loi += "Phai chon quoc tich <br>";
+        }
+        else qt.className= "txt";
+        // kiem tra ghi chu
+
+        var gc = document.getElementById('ghichu');
+        if(gc.value.length>200){
+            gc.className="loi";
+            loi += "Ghi chu phai duoi 200 ki tu <br>";
+        }
+        else gc.className="txt";
+        // tra va gia tri kiem tra
+
+        if(loi!=""){
+            document.getElementById('baoloi').innerHTML=loi;
+            return false;
+        }
+    }
+    setTimeout("document.getElementById('baoloi').innerHTML=''",10000);
+</script>

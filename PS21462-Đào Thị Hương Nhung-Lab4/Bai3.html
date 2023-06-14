@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      .container {
+        width: 1140px;
+        margin: auto;
+        border: 1px solid darkgrey;
+      }
+      header {
+        background: darkolivegreen;
+        height: 120px;
+        position: relative;
+        color: aqua;
+        text-align: center;
+        font-size: 30px;
+      }
+      main {
+        background: darkseagreen;
+        min-height: 400px;
+        text-align: center;
+        font-size: 25px;
+      }
+      footer {
+        background: darkslategray;
+        height: 100px;
+      }
+      button {
+        border-radius: 5px;
+        background-color: brown;
+        color: aliceblue;
+      }
+      footer {
+        text-align: center;
+      }
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <span id="dongho" onclick="startstopDH();">Dong ho</span>
+      </header>
+      <main>
+        <span id="loichao" onclick="loichao()">Lời chào</span> <br />
+        <br />
+        <button onclick="tai_lai()">Nap lai</button>
+      </main>
+      <footer>
+        <h3>Tác giả: Đào Thị Hương Nhung</h3>
+        <p>Email: nhung123456@gmail.com</p>
+      </footer>
+    </div>
+  </body>
+</html>
+<script>
+  function tg() {
+    var dh = null;
+    var now = new Date();
+    var h = now.getHours();
+    var m = now.getMinutes();
+    var s = now.getSeconds();
+    document.getElementById("dongho").innerHTML = h + ":" + m + ":" + s;
+  }
+
+  dh = setInterval("tg()", 1000);
+  function startstopDH() {
+    if (dh == null) dh = setInterval("tg()", 1000);
+    else {
+      clearInterval(dh);
+      dh = null;
+    }
+  }
+  function tai_lai() {
+    location.reload();
+  }
+  function loichao() {
+    document.getElementById("loichao").innerHTML =
+      "Tôi tên là: Đào Thị Hương Nhung, chào bạn, chúc bạn một ngày an lành";
+  }
+  setTimeout(loichao, 10000);
+</script>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            border: 1px solid black;
+            border-radius: 10px;
+            margin: 0 auto;
+            padding: 10px 15px;
+            width: max-content;
+            font-size: 30px;
+            color: aliceblue;
+            background-color: red;
+        }
+    </style>
+    <script>
+        do{
+        var so1 = prompt("Moi ban nhap so 1: ");
+        }while(isNaN(so1) == true);
+        do{
+        var so2 = prompt("Moi ban nhap so 1: ");
+        }while(isNaN(so2) == true);
+        var pheptinh = prompt("Moi ban nhap phep tinh: ");
+    </script>
+    
+    </div>
+
+    
+</head>
+<body>
+        <div class="container">
+        <script>
+            switch(pheptinh){
+                case "+":
+                    var kp = Number(so1) + Number(so2);
+                    console.log(kp);
+                    document.write("<p>Ket qua so1 + so2 = "+ kp +"</p>");
+                    break;
+                case "-":
+                    var kp = Number(so1) - Number(so2);
+                    
+                    document.write("<p>Ket qua so1 - so2 = "+ kp +"</p>");
+                    console.log(kp);
+
+                    break;
+                case "*":
+                    var kp = Number(so1) * Number(so2);
+
+                    document.write("<p>Ket qua so1 * so2 = "+ kp +"</p>");
+                    console.log(kp);
+                    break;
+                case "/":
+                    var kp = Number(so1) / Number(so2);
+                    
+                    document.write("<p>Ket qua so1 / so2 = "+ kp +"</p>");
+                    console.log(kp);
+                    break;
+                default:
+                        document.write(pheptinh +" khong phai phep tinh hop le");
+                        break;
+                }
+    </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- aX^2 +bX+c = 0; -->
+    <script>
+        function pt(){
+            var a = prompt("Moi ban nhap so a: ");
+            var b = prompt("Moi ban nhap so b: ");
+            var c = prompt("Moi ban nhap so c: ");
+            var detal = b*b-(4 * a * c);
+            var y = -c/b;
+            var x = -b/2*a;
+            var x1 = (-b - Math.sqrt(detal))/2*a;
+            var x2 = (-b + Math.sqrt(detal))/2*a;
+            
+            if(a == 0){
+                alert("Nghiem cua phuong trinh la: "+y);
+            }else{
+                if(detal < 0){
+                    alert("Phuong trinh vo nghiem");
+                }else if(detal == 0){
+                    alert("Phuong trinh co nghiem kep la: x1 = x2 = "+x );
+
+                }else{
+                    alert("Phuong trinh co hai nghiem phan biet la: x1 = "+x1+"x2 = "+x2);
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <script>
+        pt();
+    </script>
+</body>
+</html>

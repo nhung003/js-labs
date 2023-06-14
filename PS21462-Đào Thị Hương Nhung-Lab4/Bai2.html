@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Đào Thị Hương Nhung</title>
+    <style>
+      .container {
+        margin: 0 auto;
+        border: 1px solid black;
+        width: max-content;
+        height: max-content;
+        text-align: center;
+        border-radius: 5px;
+        background-color: green;
+        color: aliceblue;
+        padding: 20px;
+      }
+      button:hover {
+        color: aliceblue;
+        background-color: red;
+      }
+    </style>
+    <script>
+      var sv = new Object();
+
+      sv.nhap = function () {
+        sv.hoTen = prompt("Ho va ten: ");
+        sv.diem = prompt("Diem: ");
+      };
+      sv.hienthi = function () {
+        if (this.diem >= 5) {
+          this.hocLuc = "Dau";
+        } else {
+          this.hocLuc = "Rot";
+        }
+        document.getElementById("kp").innerHTML =
+          "<p>Ho va ten: " + this.hoTen + "</p>";
+        document.getElementById("kp").innerHTML +=
+          "<p>Diem TB: " + this.diem + "</p>";
+        document.getElementById("kp").innerHTML +=
+          "<p>Hoc luc: " + this.hocLuc + "</p>";
+      };
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <h2>THONG TIN SINH VIEN</h2>
+      <button onclick="sv.nhap()">Nhap thong tin</button>
+      <button onclick="sv.hienthi();">Hien thi</button>
+      <div id="kp">Ket qua</div>
+    </div>
+  </body>
+</html>

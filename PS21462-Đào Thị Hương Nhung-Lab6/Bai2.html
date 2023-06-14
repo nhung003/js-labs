@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        form{
+            width: 600px;
+            margin: 100px auto;
+            border: 1px solid darkslategrey;
+            box-shadow: 2px 2px 1px darkcyan;
+            border-radius: 5px;
+            font-size: 1.2em;
+            transform: rotate(-10deg);
+        }
+        label { width: 120px; display: inline-block;}
+        p, h2 { margin-left: 15px;}
+        input[id], select {
+        padding: 8px;
+        width: 420px;
+        background-color: salmon;
+        border: none;
+        }
+        button {
+        width: 140px;
+        height: 40px;
+        border: none;
+        background-color: darkgoldenrod;
+        }
+        body{
+             background: linear-gradient(#B6FFCE, #F6FFA4 , #F6FFA4) no-repeat center center fixed;
+        }
+        #kq{
+            width: 500px;
+            text-align: center;
+            height: max-content;
+            font-size: larger;
+            padding: 10px;
+            font-weight: bolder;
+            margin: 0px auto;
+        }
+    </style>
+    <script>
+        function hienthi(v){
+            vc = document.getElementById("vc");
+            vc.style.display = (v==true)? "" : "none" ;
+        }
+        function kiemtra(){
+            thanhcong = true;
+            var thongbao = "";
+            //code kiem tra ten sp
+            var sp = document.getElementById("tensp");
+            if(sp.value.length == 0){
+                thongbao += "Vui long nhap ten san pham <br>";
+                thanhcong = false;
+            }
+            //kiem tra gia
+            var gia = document.getElementById("gia");
+            if(gia.value == ""){
+                thongbao += "Ban chua nhap gia<br>";
+                thanhcong = false;
+            }
+            if(isNaN(gia.value) == true){
+                thongbao += "Ban can nhap gia la so nhe <br>";
+                thanhcong = false;
+            }
+            if(parseInt(gia.value) <= 0){
+                thongbao += "Ban phai nhap gia la so duong <br>";
+                thanhcong = false;
+            }
+            //kiem tra loai san pham
+            var loai = document.getElementById("loai");
+            if(loai.value == ""){
+                thongbao += "Chon mot loai san pham di <br>";
+                thanhcong = false;
+            }
+            //kiem tra noi nhan hang
+            var radios = document.getElementsByName("diachi");
+            if(radios[0].checked == false && radios[1].checked == false){
+                var thongbao = "Vui long chon noi giao hang";
+                thanhcong = false;
+            }
+            //
+            if (thongbao == ""){
+                var thongbao = "Nhap dung du lieu";
+            }
+            document.getElementById("kq").innerHTML = thongbao;
+            return thanhcong;
+        }
+    </script>
+</head>
+<body>
+    <form action="">
+        <p><label for="">San pham</label><input type="text" id="tensp" placeholder="Nhap ten san pham"></p>
+        <p><label for="">Loai</label>
+            <select name="" id="loai">
+                <option value="">Chon loai san pham</option>
+                <option value="DT">Dien thoai</option>
+                <option value="MT">May tinh</option>
+            </select>
+        </p>
+        <p><label for="">Don gia</label><input type="text" id="gia" placeholder="Nhap don gia"></p>
+        <p><label for="">Noi nhan hang</label>
+            <input type="radio" name="diachi" onclick="hienthi(false)">Noi thanh
+            <input type="radio" name="diachi" onclick="hienthi(true)">Ngoai thanh
+        </p>
+        <div id="kq"></div>
+        <p id="vc"><label for="">Phi van chuyen</label><input type="text" id="phi_vc" value="100000"></p>
+        <p><label for=""></label><button type="button" onclick=" kiemtra()">Dat mua</button></p>
+    </form>
+</body>
+</html>

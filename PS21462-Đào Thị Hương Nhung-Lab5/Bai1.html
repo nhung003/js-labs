@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<!-- trong js định dạng size thì phải bỏ  arr.style.fontSize -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            border: 1px double rgb(0,128,128);
+            border-radius: 5px;
+            width: max-content;
+            height: max-content;
+            background-color: rgb(0,128,128);
+            color: aliceblue;
+            text-align: center;
+            padding: 10px;
+            margin: 0 auto;
+            margin-top: 30px;
+        }
+        img{
+            padding: 10px;
+        }
+        body{
+             background: linear-gradient(#B6FFCE, #F6FFA4 , #F6FFA4) no-repeat center center fixed;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2 id="ten">IPHONE XS MAX 2019</h2>
+        <img src="iphone.jpg" width="150px" height="150" alt=""> <br>
+        <label for="" id="pro" data-price = "1950">Số lương:</label>
+        <input type="number" id="qty" value="1" />
+        <button onclick="hienthi()">Tính</button>
+        <hr>
+        <h3>Name: <span id="name">?</span></h3>
+        <h3>Amount: <span id="amount">?</span></h3>
+    </div>
+</body>
+</html>
+<script>
+    function hienthi(){
+        var tensp = document.getElementById("ten").innerText;
+        var soluongsp = document.getElementById("qty").value;
+        var giasp = document.getElementById("pro").getAttribute("data-price");
+        var tinhtien = giasp*soluongsp;
+
+        document.getElementById("name").innerText = tensp;
+        document.getElementById("amount").innerText = "$" + tinhtien;
+    }
+</script>

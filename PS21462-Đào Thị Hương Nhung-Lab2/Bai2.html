@@ -1,0 +1,95 @@
+<html>
+    <head>
+        <title></title>
+        <meta charset="uft-8">
+        <style>
+            .container{
+                width: 1140px;
+                margin: auto;
+                border: 1px solid darkgrey;
+            }
+            header{
+                background: darkolivegreen;
+                height: 120px;
+                position: relative;
+            }
+            main{
+                background: darkseagreen;
+                min-height: 400px;
+            }
+            footer{
+                background: darkslategray;
+                height: 100px;
+            }
+            #chao{
+                color: deeppink;
+                font-weight: bold;
+                font-style: italic;
+                position: absolute;
+                right: 440px;
+                bottom: 50px;
+                margin: 0px auto;
+                font-size: 30px;
+                
+            }
+            footer{
+                padding-left: 500px;
+                padding-top: 30px;
+                
+            }
+            .dau{
+                color: deeppink;
+                padding-right: 10px;
+            }
+            .cuoi{
+                font-style: italic;
+                color: blue;
+            }
+            .title{
+                text-align: center;
+                color: deeppink;
+            }
+            .noidung{
+                color : darkslategray;
+                
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <header>
+                <div id="chao">
+                    <script>
+                        var n = new Date();
+                        var gio = n.getHours();
+                        if(gio) document.write("Chao buoi sang! ")
+                        else document.write("Chao buoi chieu!")
+                    </script>
+                </div>
+            </header>
+            <main>
+                <h3 class="title">JAVASCRIPT CÓ THỂ LÀM GÌ?</h3>
+                <ul class="noidung">
+                    <li>Phát triển Front-end Web. Thuyết trình. Hình ảnh động.</li>
+                    <li>Phát triển Back-end Web.</li>
+                    <li>Phát triển game.</li>
+                    <li>Phát triển Mobile App.</li>
+                </ul>
+            </main>
+            <footer>
+               <table>
+                   <tr>
+                    
+                       <td class="dau">Họ tên: </td>
+                       <td class="cuoi">Đào Thị Hương Nhung</td>
+
+                   </tr>
+                   <tr>
+                       <td class="dau">Email:</td>
+                       <td class="cuoi">meomeo@gmail.com</td>
+                   </tr>
+               </table>
+            </footer>
+        </div>
+    </body>
+</html>

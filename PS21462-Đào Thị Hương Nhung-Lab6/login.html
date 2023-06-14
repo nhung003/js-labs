@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="checklogin.js"></script>
+    <style>
+        .container{
+            border: 1px solid black;
+            width: max-content;
+            height: max-content;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 0 auto;
+            margin-top: 100px;
+        }
+        body{
+             background: linear-gradient(#B6FFCE, #F6FFA4 , #F6FFA4) no-repeat center center fixed;
+        }
+        h2{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>THONG TIN </h2>
+        <form onsubmit="return checklogin();" action="" name="flogin" method="post" action="xulylogin.php" >
+        Username:<br/> <input type="text" name="u" id="u"> <br>
+        Password: <br/> <input type="password" name="p" name="p"> <br> <br>
+        <input type="submit" name="sub" id="sub" value="Login">
+        </form>
+    </div>  
+</body>
+</html>

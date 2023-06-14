@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+                background-color: lightblue;
+            }
+            .container{
+                width: 500px;
+                margin: auto;
+                background-color: firebrick;
+                color: aliceblue;
+                font-size: 22px;
+                text-align: center;
+                border: 2px solid white;
+                border-radius: 15px;
+            }
+            form input[id]{
+                width: 200px;
+                text-align: center;
+                padding: 6px 0px;
+                border: solid 1px black;
+                background-color: blanchedalmond;
+            }
+            form button{
+                width: 120px;
+                height: 40px;
+
+            }
+            .nut{
+                background: lightgreen; color: white;
+            }
+            .nut_khoa{
+                background: darksalmon;
+                color: white;
+            }
+            #solangiai{
+                color: yellow;
+            }
+            #kp{
+                height: 150px;
+                margin: 10px 50px 0 50px;
+                border: 1px double white;
+            }
+            label{
+                text-align: left;
+            }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Be lam toan</h2>
+        <span>So lan choi: <b id="solangiai"></b></span>
+        <form action="">
+            <p><label for="">Nhap so X</label><input type="text" id="x"></p>
+            <p><label for="">Nhap so Y</label><input type="text" id="y"></p>
+            <p><label for="">Tra loi</label><input type="text" id="tl"></p>
+            <div id="kq"></div>
+            <button type="button" class="nut" id="btntaoso" onclick="taoso()">Tao so</button>
+            <button class="nut_khoa" id="btngiai" onclick="tinh();dem()">OK</button>
+            
+        </form>
+    </div>
+</body>
+</html>
+<script>
+    function taoso(){
+        var x = Math.round(Math.random()*100);
+        var y = Math.round(Math.random()*100);
+        document.getElementById("x").value = x;
+        document.getElementById("y").value = y;
+    }
+    function tinh(){
+        if(document.getElementById("tl").value == x+y){
+            document.getElementById("kq").innerHTML = "<p> Be gioi qua</p>";
+        }else{
+            document.getElementById("kq").innerHTML = "<p> Be lam sai roi</p>";
+        }
+    }
+    var solangiai = 0;
+    function dem(){
+        solangiai++;
+        document.getElementById("solangiai").innerHTML=solangiai;
+    }
+</script>

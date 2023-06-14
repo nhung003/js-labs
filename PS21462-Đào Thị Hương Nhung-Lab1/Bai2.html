@@ -1,0 +1,55 @@
+<html>
+    <head>
+        <title>Bài 1 - Lab1</title>
+        <meta charset="utf-8">
+        <script src="Bai2.js"></script>
+        <style>
+            .container {
+              border: 1px solid black;
+              width: max-content;
+              padding: 0 0px;
+              margin: 0 auto;
+            }
+            .title {
+              color: aliceblue;
+              background-color: black;
+              border-bottom: 1px solid black;
+              text-align: center;
+              padding: 5px 0px;
+              width: 300px;
+            }
+            .body{
+              margin-left: 50px;
+            }
+          </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="title">
+              <h2>Thông tin cá nhân</h2>
+            </div>
+            <div class="body">
+              <p>
+                <span> Họ tên :</span>
+                <b id="hoten">
+                  <script>
+                    document.write(hoten);
+                  </script>
+                </b>
+              </p>
+              <p>
+                <span> Mã sv :</span>
+                <b id="masv">
+                  <script>
+                    document.write(masv);
+                  </script>
+                </b>
+              </p>
+              <p><span> Ngày sinh :</span> <b id="ns"></b></p>
+            </div>
+          </div>
+    </body>
+</html>
+<script>
+    document.getElementById("ns").innerHTML=ngaysinh;
+</script>

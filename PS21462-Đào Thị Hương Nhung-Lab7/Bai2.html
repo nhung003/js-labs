@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PS21462-Đào Thị Hương Nhung</title>
+    <script src="angular.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        .container{
+            border: 3px solid yellow;
+        }
+        h2{
+            text-align: center;
+        }
+        body{
+             background: linear-gradient(#8FBDD3, #E4D1B9 , #BE8C63) no-repeat center center fixed;
+
+        }
+    </style>
+</head>
+<body ng-app="b2">
+    <div ng-controller="hienthi" class="container">
+        <h2>TINH DIEN TICH CHU VI HINH CHU NHAT</h2>
+        <form>
+            <div class="form-group">
+                <label for="">Chieu dai</label>
+                <input type="text" name="dai" ng-model="dai" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="">Chieu rong</label>
+                <input type="text" name="rong" ng-model="rong" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="">Chu vi</label>
+                <span class="form-control">{{chuvi}}</span>
+            </div>
+            <div class="form-group">
+                <label for="">Dien tich</label>
+                <span class="form-control">{{dientich}}</span>
+            </div>
+            <div class="form-group">
+                <button class="btn btn-warning" ng-click="tinhtoan()">Tinh toan</button>
+            </div>
+        </form>
+    </div>
+</body>
+<script>
+    app= angular.module("b2",[]);
+    app.controller("hienthi",xuly);
+    function xuly($scope){
+        $scope.tinhtoan= function(){
+            var d = parseFloat($scope.dai);
+            var r = parseFloat($scope.rong);
+            $scope.chuvi = (d+r)*2;
+            $scope.dientich = d*r;
+        }
+    }
+</script>
+</html>

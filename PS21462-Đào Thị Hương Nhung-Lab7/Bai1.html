@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PS21462-Đào Thị Hương Nhung</title>
+    <script src="angular.min.js"></script>
+    <style>
+        .container{
+            border: 1px solid black;
+            width: max-content;
+            padding: 10px;
+            margin: 0px auto;
+            border-radius: 5px;
+        }
+        ul>li{
+            list-style: none;
+            color: blue;
+        }
+        body{
+             background: linear-gradient(#B6FFCE, #F6FFA4 , #F6FFA4) no-repeat center center fixed;
+
+        }
+        h2{
+            color: red;
+        }
+    </style>
+</head>
+<body ng-app="b1">
+    <div class="container" ng-controller="hienthi">
+        <div class="caption">
+            <h2>Thong tin sinh vien</h2>
+            <img src="images/cho.jpg" width="200" height="200" alt="">
+        </div>
+        <ul>
+            <li><span>Ho ten: </span>{{hoten}}</li>
+            <li><span>Ngay sinh: </span>{{ngaysinh}}</li>
+            <li><span>Phai: </span>{{gender}}</li>
+            <li><span>Diem: </span>{{mark}}</li>
+        </ul>
+    </div>
+</body>
+<script>
+    app = angular.module("b1",[]);
+    app.controller("hienthi",xuly);
+    function xuly($scope){
+        $scope.hoten = "Nguyen Van Teo";
+        $scope.ngaysinh = "24/3/2004";
+        $scope.gender = "Nam";
+        $scope.photo = "cho.jpg";
+        $scope.mark = 8.5;
+    }
+    </script>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            border: 1px solid black;
+            padding: 10px;
+            text-align: left;
+            border-radius: 5px;
+            margin: 0 auto;
+            width: max-content;
+            height: max-content;
+            font-size: 20px;
+            background-color: #9FC088;
+        }
+        h2{
+            color:aliceblue;
+            text-align: center;
+        }
+        #cauhoi{
+            color: rgb(16, 16, 157);
+        }
+        button{
+            color: aliceblue;
+            background-color: brown;
+        }
+    </style>
+    <script>
+        function traloi1(){
+            document.getElementById('kq1').innerHTML='Nói một cách đơn giản, JavaScript là ngôn ngữ lập trình hướng đối tượng được thiết kế giúp phát triển web dễ dàng và hấp dẫn hơn.<br> Trong hầu hết các trường hợp, JavaScript được sử dụng để tạo các yếu tố tương tác phản ứng trên các trang web, nâng cao trải nghiệm người dùng.'
+        }
+        function traloi2(){
+            document.getElementById('kq2').innerHTML='Hàm setTimeout() thường được sử dụng nếu bạn muốn hàm của mình thực thi bao nhiêu mili giây kể từ khi gọi method setTimeout().'
+        }
+        function traloi3(){
+            document.getElementById('kq3').innerHTML='<style>p{color: red;}</style>'
+        }
+        function traloi4(){
+            document.getElementById('kq4').innerHTML='Sử dụng câu lệnh getElementById chấm innerHTML để thực hiện.';
+        }
+        function traloi5(){
+            document.getElementById('kq5').innerHTML='AngularJS cho phép tạo ra các ứng dụng một cách đơn giản với mã được tổ chức khoa học, rõ ràng. <br>AngularJS sử dụng data bind – liên kết dữ liệu với các thẻ HTML nên làm giảm thiểu mã lệnh đọc ghi dữ liệu.<br>AngularJS có thể chạy trên hầu hết các trình duyệt điện thoại thông minh<br><br>Trong bài viết này chúng ta sẽ cùng điểm danh 7 bộ thư viện có tiếng mà bạn có thể kết hợp để hoàn toàn thay thế AngularJS:<br>1.Sử dụng React.js cho view<br>2.Sử dụng react-router cho router.<br>3.Sử dụng CommonJS cho module loading.4.<br>Sử dụng Backbone cho model.<br>5.Sử dụng Backbone cho controller hoặc bạn cũng có thể sử dụng một bộ thư viện khác của Facebook đó là Facebook Flux.<br>6.Sử dụng thư viện của NPM hoặc Bower để hỗ trợ promises hoặc các hàm xử lý string.<br>7.Sử dụng GulpJS để tự động hoá các tác vụ khi lập trình.';
+        }
+    </script>
+  
+</head>
+<body>
+    <div class="container">
+        <h2>TONG HOP</h2>
+        <div class="question">
+            <p id="cauhoi">1. Javascript giúp bạn làm gì?</p>
+            <p id="kq1"></p>
+            <button onclick="traloi1()">Tra loi</button>
+        </div>
+        <div class="question">
+            <p id="cauhoi">2. Lệnh setTimeout giúp bạn làm gì?</p>
+            <p id="kq2"></p>
+            <button id="tl2" onclick="traloi2()">Trả lời</button>
+        </div>
+        <div class="question">
+            <p id="cauhoi">3. Viết lệnh cần thiết để đổi màu chữ thành màu đỏ cho tất cả các tag p trong trang?</p>
+            <p id="kq3"></p>
+            <button id="tl3" onclick="traloi3()">Trả lời</button>
+        </div>
+        <div class="question">
+            <p id="cauhoi">4. Lệnh để hiện chữ Bé giỏi quá vào tag có id là kq thì viết thế nào?</p>
+            <p id="kq4"></p>
+            <button id="tl4" onclick="traloi4()">Trả lời</button>
+        </div>
+        <div class="question">
+            <p id="cauhoi">5. Thư viện AngularJS giúp gì cho bạn , ngoài AngularJS còn thư viện nào khác không?</p>
+            <p id="kq5"></p>
+            <button id="tl5" onclick="traloi5()">Trả lời</button>
+        </div>
+    </div>
+</body>
+</html>

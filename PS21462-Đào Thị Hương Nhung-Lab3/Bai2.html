@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            margin: 0 auto;
+            border: 1px solid black;
+            margin: 0 auto;
+            padding: 10px 15px;
+            width: max-content;
+            font-size: 20px;
+            color: blue;
+            background-color: red;
+        }
+        span{
+            padding: 10px;
+            margin: 10px;
+            border-radius: 30px;
+            border: 1px solid yellow;
+            background-color: yellow;
+        }
+        .title{
+            text-align: center;
+            color: red;
+        }
+
+    </style>
+    <script>
+        var f0 = prompt("Nhap so dau tien: ");
+        var f1 = prompt("Nhap so thu 2: ");
+    </script>
+</head>
+<body>
+    <div class="title">
+        <script>
+        document.write("<h3>Day fibonaci</h3>");
+        </script>
+    </div>
+    <div class="container">
+        <script>
+            var fn = prompt("Nhap Fn: ");
+            if(isNaN(Fn)==true){
+                var fn = prompt("Moi ban nhap lai Fn: ");
+            }
+            // for(var i = 0; i <10;i++){
+            for(f0; f0 <fn;i++){
+
+
+                var f = Number(f0) + Number(f1);
+                f0 = f1;
+                f1 = f;
+                document.write("<span>" + f +"\t</span>");
+            }
+        </script>
+    </div>
+</body>
+</html>
